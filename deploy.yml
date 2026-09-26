@@ -1,14 +1,14 @@
-name: Deploy Chi Đoàn Ấp Tân An to GitHub Pages
+name: Deploy Chi Doan Tan An to GitHub Pages
 
 on:
-  # Tự động kích hoạt khi có lệnh push lên nhánh main (hoặc master)
+  # Chạy tự động mỗi khi có lệnh đẩy code (push) lên nhánh main
   push:
-    branches: ["main"]
+    branches: ["main"] # Nếu nhánh chính của bạn là master, hãy đổi thành "master"
 
-  # Cho phép bạn bấm nút chạy thủ công từ tab "Actions" trên GitHub
+  # Cho phép bạn kích hoạt chạy thủ công từ tab "Actions" trên GitHub
   workflow_dispatch:
 
-# Phân quyền cần thiết cho GITHUB_TOKEN để triển khai GitHub Pages
+# Cấp quyền cần thiết cho GITHUB_TOKEN để triển khai GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -17,7 +17,7 @@ permissions:
 # Đảm bảo chỉ có một tiến trình deploy chạy tại một thời điểm
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -32,10 +32,10 @@ jobs:
       - name: Cấu hình GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Tải lên gói dữ liệu (Artifact)
+      - name: Tải lên mã nguồn (Artifact)
         uses: actions/upload-pages-artifact@v3
         with:
-          # Thư mục chứa tệp index.html của bạn (dấu chấm nghĩa là thư mục gốc)
+          # Thư mục chứa file index.html (dùng dấu chấm '.' nếu file nằm ở thư mục gốc)
           path: '.'
 
       - name: Tiến hành Deploy lên GitHub Pages
