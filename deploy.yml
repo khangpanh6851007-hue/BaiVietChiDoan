@@ -1,23 +1,23 @@
-name: Deploy Chi Doan Tan An to GitHub Pages
+name: Deploy Website to GitHub Pages
 
 on:
-  # Chạy tự động mỗi khi có lệnh đẩy code (push) lên nhánh main
+  # Tự động chạy mỗi khi có lệnh push lên nhánh main (hoặc master)
   push:
-    branches: ["main"] # Nếu nhánh chính của bạn là master, hãy đổi thành "master"
+    branches: ["main"]
 
-  # Cho phép bạn kích hoạt chạy thủ công từ tab "Actions" trên GitHub
+  # Cho phép bạn chạy thủ công từ tab "Actions" trên GitHub
   workflow_dispatch:
 
-# Cấp quyền cần thiết cho GITHUB_TOKEN để triển khai GitHub Pages
+# Phân quyền cho token truy cập repository
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Đảm bảo chỉ có một tiến trình deploy chạy tại một thời điểm
+# Cho phép chỉ định một tiến trình deploy chạy đơn lẻ để tránh xung đột
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -26,18 +26,18 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout mã nguồn
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Cấu hình GitHub Pages
-        uses: actions/configure-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Tải lên mã nguồn (Artifact)
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Thư mục chứa file index.html (dùng dấu chấm '.' nếu file nằm ở thư mục gốc)
+          # Chỉ định thư mục chứa file index.html của bạn (ở đây để thư mục gốc .)
           path: '.'
 
-      - name: Tiến hành Deploy lên GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
