@@ -179,7 +179,25 @@
     <!-- Nội dung chính -->
     <main class="container">
         <h2 class="section-title">Tin Tức & Hoạt Động (20/10/2026 - 30/11/2026)</h2>
+        <section class="dashboard" aria-label="Bảng điều khiển tin tức">
+            <div class="stats-row">
+                <div class="stat-card"><span>📰</span><strong id="total-count">18</strong><small>Tổng bài viết</small></div>
+                <div class="stat-card"><span>📅</span><strong id="month-count">10</strong><small>Bài mới bổ sung</small></div>
+                <div class="stat-card"><span>⭐</span><strong id="saved-count">0</strong><small>Bài đã lưu</small></div>
+            </div>
+            <div class="toolbar">
+                <label class="search-box">🔎 <input id="post-search" type="search" placeholder="Tìm kiếm tiêu đề hoặc nội dung..." aria-label="Tìm kiếm bài viết"></label>
+                <select id="date-filter" aria-label="Lọc thời gian"><option value="all">Tất cả thời gian</option><option value="new">Bài bổ sung (24/11–31/12)</option><option value="old">Bài trước đó</option></select>
+                <select id="sort-order" aria-label="Sắp xếp"><option value="newest">Mới nhất trước</option><option value="oldest">Cũ nhất trước</option><option value="az">Tiêu đề A–Z</option></select>
+                <button class="tool-btn" id="saved-filter" type="button">⭐ Bài đã lưu</button>
+                <button class="tool-btn" id="theme-toggle" type="button" aria-label="Đổi giao diện">🌙 Chế độ tối</button>
+                <button class="tool-btn" id="print-btn" type="button">🖨️ In</button>
+                <button class="tool-btn primary" id="export-btn" type="button">⬇ Xuất dữ liệu</button>
+            </div>
+            <p class="results-line" id="results-line" aria-live="polite">Đang hiển thị bài viết</p>
+        </section>
         <div id="posts-list" class="posts-grid"></div>
+        <div id="empty-state" class="empty-state" hidden>Không tìm thấy bài viết phù hợp. Hãy thử từ khóa khác nhé.</div>
     </main>
 
     <!-- Footer -->
@@ -237,6 +255,56 @@
                 date: "30/11/2026",
                 content: "Chi đoàn tuyên dương 5 đoàn viên xuất sắc trong chuỗi hoạt động đợt thi đua cao điểm vừa qua. Đồng thời, Ban Chấp hành Chi đoàn đã thông qua kế hoạch công tác và các mục tiêu trọng tâm cho tháng 12."
             }
+            ,{
+                title: "Ra quân tuyên truyền an toàn giao thông cho thanh niên",
+                date: "24/11/2026",
+                content: "Chi đoàn tổ chức tuyên truyền Luật Trật tự, an toàn giao thông đường bộ, nhắc nhở đoàn viên đội mũ bảo hiểm đạt chuẩn, không sử dụng rượu bia khi lái xe và xây dựng văn hóa giao thông an toàn."
+            },
+            {
+                title: "Ngày hội đổi rác tái chế lấy cây xanh",
+                date: "28/11/2026",
+                content: "Đoàn viên vận động người dân phân loại giấy, nhựa và lon đã qua sử dụng để đổi lấy cây xanh. Hoạt động góp phần lan tỏa thói quen tiêu dùng bền vững và giữ gìn môi trường sống."
+            },
+            {
+                title: "Tập huấn kỹ năng sơ cấp cứu và phòng chống tai nạn",
+                date: "02/12/2026",
+                content: "Buổi tập huấn trang bị kiến thức nhận biết tình huống khẩn cấp, gọi trợ giúp đúng cách và thực hành một số kỹ năng sơ cấp cứu cơ bản dưới sự hướng dẫn của người có chuyên môn."
+            },
+            {
+                title: "Thăm hỏi gia đình chính sách và người cao tuổi",
+                date: "06/12/2026",
+                content: "Đoàn viên đến thăm hỏi, trao những phần quà nghĩa tình và hỗ trợ các công việc phù hợp tại gia đình chính sách, người cao tuổi có hoàn cảnh khó khăn, phát huy truyền thống uống nước nhớ nguồn."
+            },
+            {
+                title: "Diễn đàn Thanh niên sống đẹp, sống có trách nhiệm",
+                date: "10/12/2026",
+                content: "Diễn đàn tạo không gian để đoàn viên trao đổi về trách nhiệm cộng đồng, ứng xử văn minh trên mạng xã hội, tinh thần tự học và những việc làm thiết thực đóng góp cho địa phương."
+            },
+            {
+                title: "Ngày hội tư vấn hướng nghiệp và kỹ năng nghề nghiệp",
+                date: "14/12/2026",
+                content: "Chương trình chia sẻ cách tìm hiểu ngành nghề, chuẩn bị hồ sơ ứng tuyển, viết CV và rèn luyện kỹ năng phỏng vấn. Đoàn viên được khuyến khích chủ động học tập và định hướng tương lai."
+            },
+            {
+                title: "Chương trình tình nguyện mùa đông – sẻ chia yêu thương",
+                date: "18/12/2026",
+                content: "Chi đoàn vận động quyên góp sách vở, quần áo và nhu yếu phẩm còn sử dụng tốt để trao tặng các hoàn cảnh khó khăn. Mỗi đóng góp nhỏ cùng tạo nên sự sẻ chia thiết thực."
+            },
+            {
+                title: "Sinh hoạt chuyên đề: Tự hào truyền thống Quân đội nhân dân Việt Nam",
+                date: "22/12/2026",
+                content: "Nhân dịp kỷ niệm Ngày thành lập Quân đội nhân dân Việt Nam 22/12, đoàn viên cùng tìm hiểu truyền thống vẻ vang, giao lưu và bày tỏ lòng biết ơn đối với các thế hệ đi trước."
+            },
+            {
+                title: "Gian hàng thanh niên – kết nối sản phẩm địa phương",
+                date: "27/12/2026",
+                content: "Hoạt động giới thiệu sản phẩm địa phương, sản phẩm thân thiện môi trường và ý tưởng khởi nghiệp của thanh niên. Chương trình khuyến khích tinh thần sáng tạo, quảng bá đặc sản và kết nối cộng đồng."
+            },
+            {
+                title: "Tổng kết công tác Đoàn năm 2026 và chào năm mới 2027",
+                date: "31/12/2026",
+                content: "Chi đoàn nhìn lại kết quả hoạt động năm 2026, ghi nhận những đóng góp tích cực, trao đổi bài học kinh nghiệm và thống nhất định hướng hoạt động năm 2027 với tinh thần đoàn kết, xung kích, sáng tạo."
+            }
         ];
 
         // Hàm render hiển thị bài viết lên giao diện
@@ -256,5 +324,49 @@
         // Chạy hàm render khi trang web tải xong
         document.addEventListener('DOMContentLoaded', renderPosts);
     </script>
+
+<style>
+:root{--brand:#0759b5;--brand2:#003d82;--surface:#fff;--page:#f2f6fc;--ink:#182338;--muted:#64748b;--line:#e3eaf4;--shadow:0 12px 32px rgba(17,52,94,.09)}
+html{scroll-behavior:smooth}body{background:radial-gradient(circle at 10% 0%,#e4f1ff 0,transparent 35%),var(--page);color:var(--ink)}
+header{background:linear-gradient(120deg,#003b7a,#0878d1 55%,#19a4d8);padding:clamp(2.8rem,7vw,5rem) 0;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff35;border-radius:50%;right:-90px;top:-190px;box-shadow:0 0 0 35px #ffffff0d,0 0 0 75px #ffffff0a}
+header h1{font-size:clamp(1.8rem,5vw,3.25rem);letter-spacing:1.5px;text-shadow:0 4px 16px #002b5b55}header p{font-size:clamp(1rem,2.5vw,1.25rem)}
+nav{background:#00366fdd;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff20}nav .container{flex-wrap:wrap;align-items:center}nav a{padding:.35rem .1rem}nav a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}
+main.container{width:min(1180px,92%);padding:clamp(1.5rem,4vw,3rem) 0}.section-title{font-size:clamp(1.25rem,3vw,1.8rem);line-height:1.35;margin-bottom:1.5rem}
+.dashboard{margin-bottom:1.25rem}.stats-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:1.25rem}.stat-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem;box-shadow:var(--shadow);display:grid;grid-template-columns:auto 1fr;column-gap:.75rem;align-items:center}.stat-card>span{grid-row:span 2;font-size:1.65rem}.stat-card strong{font-size:1.55rem;color:var(--brand);line-height:1.2}.stat-card small{color:var(--muted)}
+.toolbar{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center;background:var(--surface);padding:1rem;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.search-box{display:flex;align-items:center;gap:.5rem;flex:1 1 260px;background:var(--page);padding:.65rem .85rem;border-radius:10px}.search-box input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:.95rem}.toolbar select,.tool-btn{border:1px solid var(--line);border-radius:10px;padding:.68rem .8rem;background:var(--surface);color:var(--ink);font-weight:600;font-size:.88rem}.tool-btn{cursor:pointer;transition:.2s}.tool-btn:hover{transform:translateY(-2px);border-color:var(--brand)}.tool-btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}.results-line{color:var(--muted);font-size:.9rem;margin:.8rem .2rem}
+.posts-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.15rem}.post-card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--brand);border-radius:16px;padding:1.4rem;box-shadow:var(--shadow);min-height:235px;transition:transform .25s,box-shadow .25s}.post-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(17,52,94,.14)}.post-date{font-size:.82rem;letter-spacing:.2px}.post-title{font-size:1.12rem}.post-content{font-size:.94rem;line-height:1.75}.card-actions{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}.card-actions button{border:1px solid var(--line);background:var(--page);color:var(--brand);border-radius:9px;padding:.48rem .7rem;font-weight:700;cursor:pointer}.card-actions button:hover{background:#e4f1ff}.post-tag{display:inline-block;background:#e9f3ff;color:#0759b5;padding:.22rem .55rem;border-radius:99px;font-size:.72rem;font-weight:800;margin:.2rem 0 .6rem}.empty-state{text-align:center;padding:3rem 1rem;color:var(--muted);background:var(--surface);border-radius:16px;border:1px dashed var(--line)}
+footer{background:linear-gradient(120deg,#101d31,#1b3b61);color:#d5e2f3}body.dark{--surface:#142238;--page:#0b1422;--ink:#e8f0fb;--muted:#a6b6ca;--line:#293c56;--shadow:0 12px 32px #0004;background:var(--page)}body.dark header{background:linear-gradient(120deg,#071b35,#123d70 60%,#075a78)}body.dark .post-tag{background:#18395e;color:#9dccff}body.dark .card-actions button{background:#1b304b;color:#a8d2ff}body.dark .search-box{background:#0e1c30}body.dark .tool-btn.primary{background:#176dc4}
+@media(max-width:650px){.stats-row{gap:.55rem}.stat-card{padding:.8rem .65rem;column-gap:.4rem}.stat-card>span{font-size:1.25rem}.stat-card strong{font-size:1.2rem}.stat-card small{font-size:.7rem}.toolbar>*{flex:1 1 100%}.search-box{flex-basis:100%}nav .container{gap:.9rem}nav a{font-size:.84rem}.post-card{padding:1.15rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{nav,.toolbar,.stats-row,.card-actions,footer{display:none!important}body{background:#fff;color:#000}.post-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.posts-grid{display:block}.post-card{margin-bottom:12px}}
+</style>
+<script>
+(function(){
+ const extraStart=new Date(2026,10,24), extraEnd=new Date(2026,11,31);
+ const savedKey='chidoan-saved-posts-v2'; let saved=new Set();
+ try{saved=new Set(JSON.parse(localStorage.getItem(savedKey)||'[]'))}catch(e){}
+ const $=id=>document.getElementById(id); const list=$('posts-list');
+ const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const dateOf=p=>{const a=p.date.split('/').map(Number);return new Date(a[2],a[1]-1,a[0])};
+ function persist(){try{localStorage.setItem(savedKey,JSON.stringify([...saved]))}catch(e){}}
+ function render(){
+  const q=$('post-search').value.trim().toLocaleLowerCase('vi'); const range=$('date-filter').value; const order=$('sort-order').value; const onlySaved=$('saved-filter').dataset.active==='1';
+  let items=posts.map((p,i)=>({...p,_id:i})).filter(p=>{const d=dateOf(p),isExtra=d>=extraStart&&d<=extraEnd;return (!q||(p.title+' '+p.content+' '+p.date).toLocaleLowerCase('vi').includes(q))&&(range==='all'||(range==='new'&&isExtra)||(range==='old'&&!isExtra))&&(!onlySaved||saved.has(p._id))});
+  items.sort((a,b)=>order==='oldest'?dateOf(a)-dateOf(b):order==='az'?a.title.localeCompare(b.title,'vi'):dateOf(b)-dateOf(a));
+  $('total-count').textContent=posts.length;$('month-count').textContent=posts.filter(p=>dateOf(p)>=extraStart&&dateOf(p)<=extraEnd).length;$('saved-count').textContent=saved.size;
+  $('results-line').textContent=`Đang hiển thị ${items.length}/${posts.length} bài viết`;$('empty-state').hidden=items.length!==0;
+  list.innerHTML=items.map(p=>`<article class="post-card"><div><div class="post-date">📅 ${escapeHTML(p.date)}</div><span class="post-tag">${dateOf(p)>=extraStart&&dateOf(p)<=extraEnd?'HOẠT ĐỘNG MỚI':'TIN HOẠT ĐỘNG'}</span><h3 class="post-title">${escapeHTML(p.title)}</h3><p class="post-content">${escapeHTML(p.content)}</p></div><div class="card-actions"><button type="button" data-save="${p._id}" aria-pressed="${saved.has(p._id)}">${saved.has(p._id)?'★ Đã lưu':'☆ Lưu bài'}</button><button type="button" data-share="${p._id}">↗ Chia sẻ</button></div></article>`).join('');
+ }
+ ['post-search','date-filter','sort-order'].forEach(id=>$(id).addEventListener(id==='post-search'?'input':'change',render));
+ $('saved-filter').addEventListener('click',e=>{const b=e.currentTarget;b.dataset.active=b.dataset.active==='1'?'0':'1';b.textContent=b.dataset.active==='1'?'⭐ Đang xem bài lưu':'⭐ Bài đã lưu';render()});
+ $('theme-toggle').addEventListener('click',()=>{document.body.classList.toggle('dark');$('theme-toggle').textContent=document.body.classList.contains('dark')?'☀️ Chế độ sáng':'🌙 Chế độ tối'});
+ $('print-btn').addEventListener('click',()=>window.print());
+ $('export-btn').addEventListener('click',()=>{const blob=new Blob(['\ufeff'+JSON.stringify(posts,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tin-tuc-chi-doan-2026.json';a.click();URL.revokeObjectURL(url)});
+ list.addEventListener('click',async e=>{const save=e.target.closest('[data-save]'),share=e.target.closest('[data-share]');if(save){const id=Number(save.dataset.save);saved.has(id)?saved.delete(id):saved.add(id);persist();render()}if(share){const p=posts[Number(share.dataset.share)],text=p.title+'\n'+p.date+'\n'+p.content;try{if(navigator.share)await navigator.share({title:p.title,text});else if(navigator.clipboard){await navigator.clipboard.writeText(text);share.textContent='✓ Đã sao chép'}}catch(err){}}});
+ render();
+})();
+</script>
+
 </body>
 </html>

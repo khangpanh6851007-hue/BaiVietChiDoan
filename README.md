@@ -1,36 +1,67 @@
-# 🇻🇳 Website Thông Tin Hoạt Động Chi Đoàn (2026)
+# Chi Đoàn Thanh Niên — Ultra 2026
 
-Website đưa tin, cập nhật thông báo và tổng hợp các hoạt động nổi bật của Chi đoàn Thanh niên Hồ Chí Minh. Dự án được tối ưu hóa giao diện hiện đại, mượt mà trên cả thiết bị di động lẫn máy tính.
+Website tĩnh giới thiệu tin tức và hoạt động Chi đoàn, xây dựng bằng HTML, CSS và JavaScript thuần. Không cần cài đặt framework hoặc chạy máy chủ riêng.
 
----
+## Tính năng
 
-## 🌟 Tính Năng Chính
+- Giao diện tiếng Việt, tương thích máy tính, máy tính bảng và điện thoại.
+- Danh sách tin hoạt động được dựng tự động từ dữ liệu JavaScript.
+- 18 bài viết mẫu: 8 bài có sẵn và 10 bài bổ sung từ **24/11/2026 đến 31/12/2026**.
+- Tìm kiếm theo tiêu đề, nội dung và ngày.
+- Lọc nhóm bài viết cũ/mới; sắp xếp theo ngày hoặc tiêu đề.
+- Lưu bài yêu thích trên trình duyệt bằng `localStorage`.
+- Chế độ sáng/tối, chia sẻ bài viết, in trang và xuất dữ liệu JSON.
+- Hỗ trợ `prefers-reduced-motion` và kiểu in.
 
-- 📰 **Tin tức & Bài viết:** Cập nhật liên tục các hoạt động, sự kiện của Chi đoàn (kèm mốc thời gian rõ ràng).
-- 📱 **Giao diện Responsive:** Hiển thị tối ưu cho mọi kích thước màn hình (Smartphone, Tablet, PC).
-- ⚡ **Tốc độ tải nhanh:** Code tối ưu nhỏ gọn, chỉ sử dụng HTML, CSS và JavaScript thuần (Vanilla JS), không dùng thư viện bên ngoài.
-- 🚀 **Sẵn sàng cho GitHub Pages:** Dễ dàng triển khai và lưu trữ miễn phí.
+> Lưu ý: nội dung bài viết là dữ liệu mẫu để biên tập. Hãy xác minh ngày, hoạt động và thông tin thực tế trước khi công bố.
 
----
-
-## 📅 Các Bài Viết Mẫu Trong Đợt Thi Đua (20/10/2026 – 30/11/2026)
-
-1. **20/10/2026:** Tọa đàm chào mừng Ngày Phụ nữ Việt Nam 20/10.
-2. **25/10/2026:** Phát động chiến dịch "Chủ nhật Xanh" bảo vệ môi trường.
-3. **28/10/2026:** Tuyên truyền kiến thức Chuyển đổi số cho Thanh niên.
-4. **02/11/2026:** Hội thao Thanh niên "Khỏe để Lập nghiệp".
-5. **07/11/2026:** Sinh hoạt Đoàn định kỳ tháng 11/2026.
-6. **12/11/2026:** Tổ chức hoạt động "Uống nước nhớ nguồn".
-7. **18/11/2026:** Hội thi "Nét đẹp Tri ân" chào mừng ngày 20/11.
-8. **22/11/2026:** Đoàn viên Chi đoàn tham gia hiến máu nhân đạo.
-9. **26/11/2026:** Diễn đàn Thanh niên với Ý tưởng Khởi nghiệp Sáng tạo.
-10. **30/11/2026:** Tổng kết thi đua tháng 11 và phương hướng tháng 12/2026.
-
----
-
-## 🛠️ Cấu Trúc Dự Án
+## Cấu trúc dự án
 
 ```text
-chidoan-website/
-├── index.html     # Mã nguồn chính (Bao gồm HTML, CSS & JavaScript)
-└── README.md      # Tài liệu hướng dẫn dự án
+.
+├── index.html
+├── README.md
+└── .github/
+    └── workflows/
+        └── deploy.yml
+```
+
+## Chạy thử
+
+Mở trực tiếp `index.html` bằng trình duyệt. Website không yêu cầu bước build.
+
+## Triển khai lên GitHub Pages
+
+1. Tạo repository trên GitHub.
+2. Đưa `index.html`, `README.md` và thư mục `.github/workflows/` lên nhánh `main`.
+3. Mở **Settings → Pages**.
+4. Trong **Build and deployment → Source**, chọn **GitHub Actions**.
+5. Push commit lên nhánh `main` (hoặc chạy workflow thủ công ở tab **Actions**).
+6. Sau khi workflow hoàn tất, mở địa chỉ GitHub Pages hiển thị trong **Settings → Pages**.
+
+Workflow nằm tại `.github/workflows/deploy.yml`. GitHub Actions sẽ tải lên nội dung website tĩnh và triển khai lên GitHub Pages.
+
+## Cập nhật nội dung
+
+Trong `index.html`, tìm mảng `posts` trong thẻ `<script>`. Mỗi bài viết có dạng:
+
+```js
+{
+  title: "Tiêu đề hoạt động",
+  date: "24/11/2026",
+  content: "Nội dung giới thiệu hoạt động."
+}
+```
+
+Ngày dùng định dạng `DD/MM/YYYY`. Khi thêm bài viết, nên giữ nội dung ngắn gọn, chính xác và kiểm tra lại ngày tháng.
+
+## Lưu ý kỹ thuật
+
+- Dữ liệu yêu thích được lưu cục bộ trên từng trình duyệt; hiện chưa có đăng nhập hoặc đồng bộ giữa nhiều thiết bị.
+- Chức năng xuất JSON tạo bản sao dữ liệu bài viết hiện có.
+- Chức năng chia sẻ dùng Web Share API nếu trình duyệt hỗ trợ; nếu không, trình duyệt có thể dùng thao tác sao chép khi Clipboard API khả dụng.
+- Đây là website tĩnh, chưa có trang quản trị hoặc cơ sở dữ liệu phía máy chủ.
+
+## Giấy phép
+
+Chưa chỉ định giấy phép. Hãy bổ sung tệp `LICENSE` nếu muốn công bố quyền sử dụng và phân phối mã nguồn.
