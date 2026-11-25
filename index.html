@@ -368,5 +368,126 @@ footer{background:linear-gradient(120deg,#101d31,#1b3b61);color:#d5e2f3}body.dar
 })();
 </script>
 
+
+<style id="youth-ultra-style">
+:root{--ultra-bg:#eef4ff;--ultra-card:#fff;--ultra-ink:#14243b;--ultra-muted:#64748b;--ultra-line:#dce7f5;--ultra-blue:#0759b5;--ultra-cyan:#16a5d8;--ultra-gold:#f5b82e}
+body{background:radial-gradient(ellipse at 8% 2%,#dceeff 0,transparent 32%),linear-gradient(135deg,#f4f8ff,#eaf2fc);color:var(--ultra-ink)}
+.ultra-wrap{width:min(1180px,92%);margin:0 auto 3rem}
+.ultra-hero{margin:1rem 0 1.5rem;padding:clamp(1.2rem,4vw,2.2rem);border-radius:24px;background:linear-gradient(125deg,#062e62,#0759b5 55%,#12a5d1);color:#fff;box-shadow:0 18px 45px #063b7730;position:relative;overflow:hidden}
+.ultra-hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff40;border-radius:50%;right:-70px;top:-150px;box-shadow:0 0 0 30px #ffffff12,0 0 0 65px #ffffff0a}
+.ultra-hero h2{font-size:clamp(1.45rem,4vw,2.3rem);margin-bottom:.45rem}.ultra-hero p{opacity:.92;max-width:760px}
+.ultra-kicker{font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#b9e8ff}
+.ultra-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.ultra-tile,.ultra-panel{background:var(--ultra-card);border:1px solid var(--ultra-line);border-radius:18px;padding:1.1rem;box-shadow:0 10px 28px #173c6810}
+.ultra-tile{display:flex;gap:.8rem;align-items:center}.ultra-icon{width:44px;height:44px;border-radius:14px;background:#e8f3ff;display:grid;place-items:center;font-size:1.35rem;flex:none}
+.ultra-tile strong{display:block;font-size:1.45rem;color:var(--ultra-blue);line-height:1.2}.ultra-tile small{color:var(--ultra-muted)}
+.ultra-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin:1.8rem 0 .9rem}.ultra-heading h2{color:var(--ultra-blue);font-size:1.35rem}.ultra-heading p{color:var(--ultra-muted);font-size:.88rem}
+.ultra-modules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.ultra-module{background:var(--ultra-card);border:1px solid var(--ultra-line);border-radius:18px;padding:1.15rem;box-shadow:0 10px 28px #173c6810;display:flex;flex-direction:column;gap:.55rem}
+.ultra-module .module-icon{font-size:1.65rem}.ultra-module h3{font-size:1.02rem;color:var(--ultra-ink)}.ultra-module p{font-size:.88rem;color:var(--ultra-muted);line-height:1.55;flex:1}
+.ultra-tag{display:inline-flex;width:max-content;background:#e8f3ff;color:#0759b5;border-radius:99px;padding:.2rem .55rem;font-size:.7rem;font-weight:800}
+.ultra-btn{border:0;border-radius:10px;padding:.65rem .9rem;background:var(--ultra-blue);color:white;font-weight:800;cursor:pointer}.ultra-btn.secondary{background:#e8f3ff;color:#0759b5}.ultra-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.ultra-actions{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.5rem}
+.ultra-two{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem}
+.ultra-list{display:grid;gap:.65rem}.ultra-row{display:flex;gap:.7rem;align-items:flex-start;padding:.7rem;border:1px solid var(--ultra-line);border-radius:12px;background:#fbfdff}.ultra-row b{display:block;font-size:.9rem}.ultra-row small{color:var(--ultra-muted)}
+.ultra-progress{height:9px;background:#e6eef8;border-radius:99px;overflow:hidden;margin:.5rem 0}.ultra-progress span{display:block;height:100%;width:62%;background:linear-gradient(90deg,#0874c9,#21b6d7);border-radius:99px}
+.ultra-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.ultra-form input,.ultra-form select,.ultra-form textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--ultra-line);border-radius:10px;background:#fff;color:#14243b;font:inherit}.ultra-form textarea{grid-column:1/-1;min-height:90px;resize:vertical}
+.ultra-modal{position:fixed;inset:0;background:#07182dcc;display:none;place-items:center;padding:1rem;z-index:9999}.ultra-modal.open{display:grid}.ultra-modal-card{width:min(620px,100%);max-height:90vh;overflow:auto;background:#fff;color:#14243b;border-radius:20px;padding:1.3rem;box-shadow:0 25px 80px #0005}.ultra-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.ultra-close{border:0;background:#edf3fa;border-radius:9px;padding:.4rem .7rem;cursor:pointer}
+.ultra-toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102c4c;color:#fff;padding:.8rem 1.1rem;border-radius:12px;z-index:10000;transition:.25s;box-shadow:0 8px 25px #0003}.ultra-toast.show{opacity:1;transform:translate(-50%,0)}
+body.dark .ultra-tile,body.dark .ultra-panel,body.dark .ultra-module{background:var(--surface);border-color:var(--line);color:var(--ink)}
+body.dark .ultra-row{background:#102039;border-color:var(--line)}body.dark .ultra-form input,body.dark .ultra-form select,body.dark .ultra-form textarea{background:#0e1c30;color:var(--ink);border-color:var(--line)}
+body.dark .ultra-tag,body.dark .ultra-icon{background:#18395e;color:#b8dcff}body.dark .ultra-row small{color:var(--muted)}
+@media(max-width:850px){.ultra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ultra-modules{grid-template-columns:repeat(2,minmax(0,1fr))}.ultra-two{grid-template-columns:1fr}}
+@media(max-width:560px){.ultra-modules{grid-template-columns:1fr}.ultra-grid{gap:.55rem}.ultra-tile{padding:.75rem;gap:.5rem}.ultra-tile strong{font-size:1.2rem}.ultra-icon{width:36px;height:36px}.ultra-form{grid-template-columns:1fr}.ultra-form textarea{grid-column:auto}}
+@media(min-width:1500px){.ultra-wrap{width:min(1380px,92%)}}
+</style>
+
+<section class="ultra-wrap" aria-label="Trung tâm điều hành Chi đoàn">
+  <div class="ultra-hero">
+    <div class="ultra-kicker">Youth Connect • Phiên bản Ultra 2026</div>
+    <h2>TRUNG TÂM ĐIỀU HÀNH CHI ĐOÀN</h2>
+    <p>Một không gian số thống nhất để quản lý hoạt động, kết nối đoàn viên, lan tỏa tình nguyện và theo dõi phong trào. Nội dung tin tức cũ được giữ nguyên bên dưới.</p>
+    <div class="ultra-actions">
+      <button class="ultra-btn" type="button" onclick="ultraOpen('event')">＋ Tạo hoạt động</button>
+      <button class="ultra-btn secondary" type="button" onclick="ultraOpen('idea')">💡 Gửi sáng kiến</button>
+      <button class="ultra-btn secondary" type="button" onclick="document.getElementById('posts-list').scrollIntoView({behavior:'smooth'})">📰 Xem tin cũ</button>
+    </div>
+  </div>
+
+  <div class="ultra-grid">
+    <div class="ultra-tile"><div class="ultra-icon">👥</div><div><strong id="u-members">0</strong><small>Đoàn viên (nhập số liệu)</small></div></div>
+    <div class="ultra-tile"><div class="ultra-icon">🎯</div><div><strong id="u-events">0</strong><small>Hoạt động đã tạo</small></div></div>
+    <div class="ultra-tile"><div class="ultra-icon">🤝</div><div><strong id="u-volunteers">0</strong><small>Lượt đăng ký tình nguyện</small></div></div>
+    <div class="ultra-tile"><div class="ultra-icon">💡</div><div><strong id="u-ideas">0</strong><small>Sáng kiến được gửi</small></div></div>
+  </div>
+
+  <div class="ultra-heading"><div><h2>🚀 Bộ công cụ thanh niên số</h2><p>Các phân hệ gợi ý – có thể mở rộng theo nhu cầu thực tế.</p></div></div>
+  <div class="ultra-modules">
+    <article class="ultra-module"><div class="module-icon">📅</div><span class="ultra-tag">Lập kế hoạch</span><h3>Lịch công tác & sự kiện</h3><p>Tạo lịch sinh hoạt, chiến dịch, hội nghị; theo dõi thời gian, địa điểm, người phụ trách và trạng thái.</p><button class="ultra-btn" onclick="ultraOpen('event')">Tạo hoạt động</button></article>
+    <article class="ultra-module"><div class="module-icon">📝</div><span class="ultra-tag">Điều phối</span><h3>Đăng ký & điểm danh QR</h3><p>Danh sách đăng ký, xác nhận tham gia, xuất danh sách điểm danh. Có thể tích hợp QR ở phiên bản máy chủ.</p><button class="ultra-btn secondary" onclick="ultraOpen('volunteer')">Mở đăng ký mẫu</button></article>
+    <article class="ultra-module"><div class="module-icon">🏅</div><span class="ultra-tag">Thi đua</span><h3>Bảng điểm rèn luyện</h3><p>Ghi nhận ngày công, giờ tình nguyện, thành tích, chứng nhận và tuyên dương đoàn viên tiêu biểu.</p><button class="ultra-btn secondary" onclick="ultraToast('Gợi ý phân hệ: nhập đoàn viên và tiêu chí chấm điểm để triển khai.')">Xem gợi ý</button></article>
+    <article class="ultra-module"><div class="module-icon">🌱</div><span class="ultra-tag">Tình nguyện</span><h3>Ngân hàng việc tốt</h3><p>Tập hợp hoạt động Chủ nhật Xanh, hiến máu, an sinh xã hội, hỗ trợ người dân và chiến dịch cộng đồng.</p><button class="ultra-btn secondary" onclick="ultraOpen('volunteer')">Đăng ký tham gia</button></article>
+    <article class="ultra-module"><div class="module-icon">💡</div><span class="ultra-tag">Sáng tạo</span><h3>Hòm thư sáng kiến</h3><p>Tiếp nhận ý tưởng, đề xuất cải tiến, mô hình khởi nghiệp và giải pháp chuyển đổi số của đoàn viên.</p><button class="ultra-btn secondary" onclick="ultraOpen('idea')">Gửi sáng kiến</button></article>
+    <article class="ultra-module"><div class="module-icon">📣</div><span class="ultra-tag">Truyền thông</span><h3>Thông báo & bản tin</h3><p>Soạn thông báo, lịch nhắc việc, nội dung tuyên truyền, album ảnh và câu chuyện đẹp của đoàn viên.</p><button class="ultra-btn secondary" onclick="ultraOpen('notice')">Soạn thông báo</button></article>
+    <article class="ultra-module"><div class="module-icon">📚</div><span class="ultra-tag">Học tập</span><h3>Thư viện tài liệu</h3><p>Lưu nghị quyết, điều lệ, biểu mẫu, tài liệu tập huấn, kỹ năng số và tài liệu sinh hoạt chuyên đề.</p><button class="ultra-btn secondary" onclick="ultraToast('Có thể bổ sung kho tài liệu PDF/Word và phân quyền tải lên.')">Xem gợi ý</button></article>
+    <article class="ultra-module"><div class="module-icon">🗳️</div><span class="ultra-tag">Tương tác</span><h3>Khảo sát & biểu quyết</h3><p>Lấy ý kiến đoàn viên, bình chọn hoạt động, khảo sát nhu cầu học tập và đánh giá sau chương trình.</p><button class="ultra-btn secondary" onclick="ultraToast('Gợi ý: thêm câu hỏi, thời hạn bình chọn và báo cáo kết quả.')">Xem gợi ý</button></article>
+    <article class="ultra-module"><div class="module-icon">📊</div><span class="ultra-tag">Báo cáo</span><h3>Báo cáo phong trào</h3><p>Tổng hợp số lượng hoạt động, lượt tham gia, ngày công, kết quả chiến dịch và xuất dữ liệu JSON.</p><button class="ultra-btn secondary" onclick="ultraExport()">Xuất dữ liệu mới</button></article>
+  </div>
+
+  <div class="ultra-heading"><div><h2>📌 Bảng hoạt động nội bộ</h2><p>Dữ liệu mới được lưu trên trình duyệt của thiết bị này.</p></div></div>
+  <div class="ultra-two">
+    <section class="ultra-panel"><h3 style="margin-bottom:.8rem">Hoạt động sắp tới / đã tạo</h3><div class="ultra-list" id="ultra-event-list"><div class="ultra-row"><span>🗓️</span><div><b>Chưa có hoạt động mới</b><small>Chọn “Tạo hoạt động” để thêm lịch công tác.</small></div></div></div></section>
+    <section class="ultra-panel"><h3>📈 Mục tiêu phong trào</h3><p style="font-size:.9rem;color:var(--ultra-muted);margin:.5rem 0">Tiến độ minh họa – hãy cập nhật theo chỉ tiêu thực tế của Chi đoàn.</p><b>Hoạt động cộng đồng</b><div class="ultra-progress"><span style="width:62%"></span></div><small style="color:var(--ultra-muted)">62% · Mốc minh họa</small><hr style="border:0;border-top:1px solid var(--ultra-line);margin:1rem 0"><b>Chuyển đổi số đoàn viên</b><div class="ultra-progress"><span style="width:45%"></span></div><small style="color:var(--ultra-muted)">45% · Mốc minh họa</small><div class="ultra-actions"><button class="ultra-btn secondary" onclick="ultraToast('Bạn có thể thay các tỷ lệ minh họa bằng chỉ tiêu của đơn vị.')">Cập nhật chỉ tiêu</button></div></section>
+  </div>
+</section>
+
+<div class="ultra-modal" id="ultra-modal" role="dialog" aria-modal="true" aria-labelledby="ultra-modal-title">
+ <div class="ultra-modal-card"><div class="ultra-modal-head"><h3 id="ultra-modal-title">Thêm dữ liệu</h3><button class="ultra-close" onclick="ultraClose()" aria-label="Đóng">✕</button></div><form id="ultra-form" class="ultra-form"></form><div class="ultra-actions"><button class="ultra-btn" type="submit" form="ultra-form">Lưu thông tin</button><button class="ultra-btn secondary" type="button" onclick="ultraClose()">Hủy</button></div></div>
+</div>
+<div class="ultra-toast" id="ultra-toast" role="status" aria-live="polite"></div>
+
+<script id="youth-ultra-app">
+(function(){
+ const KEY='youth-connect-ultra-v1';
+ let data={events:[],ideas:[],volunteers:[],notices:[],members:0};
+ try{data={...data,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){}
+ const $=id=>document.getElementById(id);
+ const fields={
+  event:{title:'Tạo hoạt động mới',kind:'events',items:[['Tên hoạt động','title','text','VD: Ngày Chủ nhật Xanh'],['Ngày tổ chức','date','date',''],['Địa điểm','place','text',''],['Người phụ trách','owner','text',''],['Ghi chú','note','textarea','']]},
+  idea:{title:'Gửi sáng kiến thanh niên',kind:'ideas',items:[['Tên sáng kiến','title','text',''],['Người đề xuất','owner','text',''],['Lĩnh vực','place','text','VD: Môi trường, chuyển đổi số'],['Nội dung đề xuất','note','textarea','']]},
+  volunteer:{title:'Đăng ký tình nguyện',kind:'volunteers',items:[['Họ và tên','title','text',''],['Số điện thoại / liên hệ','owner','text',''],['Hoạt động muốn tham gia','place','text',''],['Ghi chú','note','textarea','']]},
+  notice:{title:'Soạn thông báo',kind:'notices',items:[['Tiêu đề thông báo','title','text',''],['Ngày đăng','date','date',''],['Nội dung','note','textarea','']]}
+ };
+ window.ultraOpen=function(type){
+  const cfg=fields[type];if(!cfg)return;
+  $('ultra-modal-title').textContent=cfg.title;
+  $('ultra-form').dataset.kind=cfg.kind;
+  $('ultra-form').innerHTML=cfg.items.map(([label,name,type,placeholder])=>`<label>${label}${type==='textarea'?`<textarea name="${name}" placeholder="${placeholder}" required></textarea>`:`<input name="${name}" type="${type}" placeholder="${placeholder}" ${name==='title'?'required':''}>`}</label>`).join('');
+  $('ultra-modal').classList.add('open');
+ };
+ window.ultraClose=()=>{$('ultra-modal').classList.remove('open')};
+ window.ultraToast=function(message){const t=$('ultra-toast');t.textContent=message;t.classList.add('show');clearTimeout(window.__ultraToastTimer);window.__ultraToastTimer=setTimeout(()=>t.classList.remove('show'),2600)};
+ function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){ultraToast('Không thể lưu: bộ nhớ trình duyệt đã đầy hoặc bị chặn.')}render()}
+ function render(){
+  $('u-events').textContent=data.events.length;$('u-ideas').textContent=data.ideas.length;$('u-volunteers').textContent=data.volunteers.length;$('u-members').textContent=Number(data.members)||0;
+  const rows=[...data.events].sort((a,b)=>(a.date||'').localeCompare(b.date||''));
+  $('ultra-event-list').innerHTML=rows.length?rows.map(e=>`<div class="ultra-row"><span>🗓️</span><div><b>${esc(e.title)}</b><small>${esc(e.date||'Chưa chọn ngày')} · ${esc(e.place||'Chưa có địa điểm')} ${e.owner?'· Phụ trách: '+esc(e.owner):''}</small></div></div>`).join(''):'<div class="ultra-row"><span>🗓️</span><div><b>Chưa có hoạt động mới</b><small>Chọn “Tạo hoạt động” để thêm lịch công tác.</small></div></div>';
+ }
+ function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ $('ultra-form').addEventListener('submit',e=>{
+  e.preventDefault();const form=e.currentTarget,kind=form.dataset.kind,fd=new FormData(form),item=Object.fromEntries(fd.entries());
+  if(!item.title||!item.title.trim()){ultraToast('Vui lòng nhập tiêu đề hoặc họ tên.');return}
+  item.createdAt=new Date().toISOString();data[kind].unshift(item);save();ultraClose();form.reset();ultraToast('Đã lưu thông tin trên thiết bị này.');
+ });
+ window.ultraExport=function(){
+  const payload={exportedAt:new Date().toISOString(),legacyPosts:window.posts||'Danh sách tin cũ nằm trong mã nguồn index.html',ultraData:data};
+  const blob=new Blob(['\ufeff'+JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='du-lieu-chi-doan-ultra-2026.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ };
+ $('ultra-modal').addEventListener('click',e=>{if(e.target===$('ultra-modal'))ultraClose()});
+ render();
+})();
+</script>
+
 </body>
 </html>

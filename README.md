@@ -1,21 +1,19 @@
-# Chi Đoàn Thanh Niên — Ultra 2026
+# Chi đoàn Thanh niên — Youth Connect Ultra 2026
 
-Website tĩnh giới thiệu tin tức và hoạt động Chi đoàn, xây dựng bằng HTML, CSS và JavaScript thuần. Không cần cài đặt framework hoặc chạy máy chủ riêng.
+Website tĩnh giới thiệu tin tức, hoạt động và công cụ điều hành Chi đoàn Thanh niên.
 
 ## Tính năng
 
-- Giao diện tiếng Việt, tương thích máy tính, máy tính bảng và điện thoại.
-- Danh sách tin hoạt động được dựng tự động từ dữ liệu JavaScript.
-- 18 bài viết mẫu: 8 bài có sẵn và 10 bài bổ sung từ **24/11/2026 đến 31/12/2026**.
-- Tìm kiếm theo tiêu đề, nội dung và ngày.
-- Lọc nhóm bài viết cũ/mới; sắp xếp theo ngày hoặc tiêu đề.
-- Lưu bài yêu thích trên trình duyệt bằng `localStorage`.
-- Chế độ sáng/tối, chia sẻ bài viết, in trang và xuất dữ liệu JSON.
-- Hỗ trợ `prefers-reduced-motion` và kiểu in.
+- Trang tin hoạt động Chi đoàn với 18 bài viết mẫu trong năm 2026.
+- Tìm kiếm bài viết, lọc theo thời gian và sắp xếp.
+- Lưu bài viết yêu thích trên trình duyệt.
+- Chia sẻ bài viết, in trang và xuất dữ liệu JSON.
+- Chế độ sáng/tối.
+- Tạo hoạt động, gửi sáng kiến, đăng ký tình nguyện và soạn thông báo.
+- Lưu dữ liệu nội bộ bằng `localStorage` trên thiết bị/trình duyệt hiện tại.
+- Giao diện responsive cho điện thoại và máy tính.
 
-> Lưu ý: nội dung bài viết là dữ liệu mẫu để biên tập. Hãy xác minh ngày, hoạt động và thông tin thực tế trước khi công bố.
-
-## Cấu trúc dự án
+## Cấu trúc thư mục
 
 ```text
 .
@@ -26,42 +24,29 @@ Website tĩnh giới thiệu tin tức và hoạt động Chi đoàn, xây dựn
         └── deploy.yml
 ```
 
-## Chạy thử
+> Đổi tên file HTML hiện có (`index-ultra(1).html`) thành `index.html` và đặt ở thư mục gốc repository. GitHub Pages mặc định tìm trang chủ tại `index.html`.
 
-Mở trực tiếp `index.html` bằng trình duyệt. Website không yêu cầu bước build.
+## Chạy thử trên máy
 
-## Triển khai lên GitHub Pages
+Mở trực tiếp `index.html` bằng trình duyệt. Không cần cài đặt package hoặc máy chủ backend.
+
+## Triển khai GitHub Pages
 
 1. Tạo repository trên GitHub.
-2. Đưa `index.html`, `README.md` và thư mục `.github/workflows/` lên nhánh `main`.
-3. Mở **Settings → Pages**.
-4. Trong **Build and deployment → Source**, chọn **GitHub Actions**.
-5. Push commit lên nhánh `main` (hoặc chạy workflow thủ công ở tab **Actions**).
-6. Sau khi workflow hoàn tất, mở địa chỉ GitHub Pages hiển thị trong **Settings → Pages**.
+2. Đưa `index.html`, `README.md` và thư mục `.github/workflows/` vào nhánh `main`.
+3. Mở **Settings → Pages** của repository.
+4. Trong **Build and deployment**, chọn **GitHub Actions** làm source.
+5. Push commit lên nhánh `main`. Workflow `Deploy GitHub Pages` sẽ tự động triển khai website.
+6. Sau khi workflow hoàn tất, mở URL GitHub Pages hiển thị trong phần **Settings → Pages**.
 
-Workflow nằm tại `.github/workflows/deploy.yml`. GitHub Actions sẽ tải lên nội dung website tĩnh và triển khai lên GitHub Pages.
+## Lưu ý về dữ liệu
 
-## Cập nhật nội dung
+Website hiện là ứng dụng frontend tĩnh. Hoạt động, sáng kiến, đăng ký và bài viết đã lưu được lưu trong `localStorage` của trình duyệt đang sử dụng; dữ liệu không tự đồng bộ giữa các thiết bị hoặc người dùng. Muốn dùng chung dữ liệu, đăng nhập, phân quyền hoặc điểm danh QR thực tế, cần bổ sung backend và cơ sở dữ liệu.
 
-Trong `index.html`, tìm mảng `posts` trong thẻ `<script>`. Mỗi bài viết có dạng:
+## Công nghệ
 
-```js
-{
-  title: "Tiêu đề hoạt động",
-  date: "24/11/2026",
-  content: "Nội dung giới thiệu hoạt động."
-}
-```
-
-Ngày dùng định dạng `DD/MM/YYYY`. Khi thêm bài viết, nên giữ nội dung ngắn gọn, chính xác và kiểm tra lại ngày tháng.
-
-## Lưu ý kỹ thuật
-
-- Dữ liệu yêu thích được lưu cục bộ trên từng trình duyệt; hiện chưa có đăng nhập hoặc đồng bộ giữa nhiều thiết bị.
-- Chức năng xuất JSON tạo bản sao dữ liệu bài viết hiện có.
-- Chức năng chia sẻ dùng Web Share API nếu trình duyệt hỗ trợ; nếu không, trình duyệt có thể dùng thao tác sao chép khi Clipboard API khả dụng.
-- Đây là website tĩnh, chưa có trang quản trị hoặc cơ sở dữ liệu phía máy chủ.
-
-## Giấy phép
-
-Chưa chỉ định giấy phép. Hãy bổ sung tệp `LICENSE` nếu muốn công bố quyền sử dụng và phân phối mã nguồn.
+- HTML5
+- CSS3
+- JavaScript thuần
+- GitHub Actions
+- GitHub Pages
